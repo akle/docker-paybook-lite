@@ -10,3 +10,9 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g bower
 RUN cd /tmp
 RUN git clone https://github.com/Paybook/lite-python.git
+ADD ./lite-python/requirements.txt /tmp/requirements.txt
+RUN pip install -qr /tmp/requirements.txt
+ADD ./lite-python /opt/lite-python/
+WORKDIR /opt/lite-python
+EXPOSE 5000
+CMD ["python", "app.py",""]
