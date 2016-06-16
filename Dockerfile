@@ -15,4 +15,5 @@ RUN pip install -qr /tmp/requirements.txt
 RUN mv lite-python /opt/lite-python
 WORKDIR /opt/lite-python
 EXPOSE 5000
-ENTRYPOINT ["/usr/bin/python"]
+#ENTRYPOINT ["/usr/bin/python"]
+CMD ["python", "main.py"]
